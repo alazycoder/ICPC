@@ -7,9 +7,8 @@ template <class InputIterator, class T>
   typename iterator_traits<InputIterator>::difference_type
     count (InputIterator first, InputIterator last, const T& val);
 ```
-统计[first, last)中val出现的次数
 
-### Example
+统计[first, last)中val出现的次数
 
 ```c++
 #include <iostream>     // std::cout
