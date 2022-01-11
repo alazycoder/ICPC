@@ -82,3 +82,41 @@ int main ()
 获取最后一个元素的引用。注意：
 * 返回的是最后一个元素的**引用**
 * 不要与vector::end混淆，vector::end返回的是迭代器，vector::back返回的是元素的引用
+
+## Modifiers
+
+### erase
+
+```c++
+iterator erase (const_iterator position);
+iterator erase (const_iterator first, const_iterator last);
+```
+
+```c++
+#include <iostream>
+#include <vector>
+
+int main ()
+{
+  std::vector<int> my_vector;
+
+  // set some values (from 1 to 10)
+  for (int i=1; i<=10; i++) 
+      my_vector.push_back(i);
+
+  // erase the 6th element
+  my_vector.erase(my_vector.begin()+5);
+
+  // erase the first 3 elements:
+  my_vector.erase(my_vector.begin(), my_vector.begin()+3);
+
+  std::cout << "my_vector contains:";
+  for (unsigned i=0; i<my_vector.size(); ++i)
+    std::cout << ' ' << my_vector[i];
+  std::cout << '\n';
+  
+  // output: my_vector contains: 4 5 7 8 9 10
+  
+  return 0;
+}
+```
